@@ -1,0 +1,10 @@
+{% extends 'wanzi/base.html' %}
+{% load staticfiles %}
+{% block title %}-博客列表{% endblock %}
+{% block body %}
+<ul>
+{% for post in posts %}
+<li><h2><a href="{% url 'post' post.title %}">{{ post.title }}</a></h2></li>
+{% endfor %}
+</ul>>
+{% endblock %}

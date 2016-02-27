@@ -1,0 +1,8 @@
+{% extends 'wanzi/base.html' %}
+{% block title %}-{{ post.title }}{% endblock %}
+{% block body %}
+<h2>{{ post.title }}<h2>
+<h4>发布于:{{ post.date }}</h4>
+<h3>{{ post.body | safe }}</h3>
+<h4><a href="{% url 'blogs' %}">Back to view other blogs</a></h4>
+{% endblock %}

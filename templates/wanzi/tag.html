@@ -1,0 +1,9 @@
+{% extends 'wanzi/base.html' %}
+{% block title %}-{{ tag.name }}{% endblock %}
+{% block body %}
+<ul>
+{% for post in posts %}
+<li><h3><a href="{% url  'post' post.title %}">{{ post.title }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

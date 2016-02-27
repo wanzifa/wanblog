@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="zh-CN"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>小丸子的blog</title>
+
+    <link href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="{% static 'css/jumbotron-narrow.css' %}" rel="stylesheet">
+
+    <script src="{% static 'js/ie-emulatin-modes-warnings.js' %}"></script><![endif]-->
+    <script src="{% static 'ie-emulation-modes-warning.js' %}"></script>
+
+
+      <script src="//cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+
+  </head>
+
+ <body>
+ <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About me</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">小丸子的blog</h3>
+      </div>
+
+      <div class="jumbotron">
+        <h1>Wanzifa' Blog</h1>
+        <p class="lead">我叫丸子发,来自木犀团队.是一名正在成长中的后台开发.😄</p>
+        <p><a class="btn btn-lg btn-success" href="{% url 'blogs' %}" role="button">View all blogs</a></p>
+      </div>
+
+        <div class="row marketing">
+        <div class="col-lg-6">
+            {% for tag in tag1 %}
+            <p><a class="btn btn-primary btn-lg" href="{% url 'tag' tag.name %}" role="button">{{ tag.name }}</a></p>
+            {% endfor %}
+        </div>
+
+        <div class="col-lg-6">
+          {% for tag in tag2 %}
+            <p><a class="btn btn-primary btn-lg" href="{% url 'tag' tag.name %}" role="button">{{ tag.name }}</a></p>
+            {% endfor %}
+        </div>
+      </div>
+
+         <footer class="footer">
+        <p>© Company 2014</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
+</body></html>

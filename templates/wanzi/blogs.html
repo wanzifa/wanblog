@@ -4,7 +4,7 @@
 {% block body %}
 <ul>
 {% for post in posts %}
-<li><h2><a href="{% url 'post' post.title %}">{{ post.title }}</a></h2></li>
+<li><h3><a href="{% url 'post' post.title %}">{{ post.title }}</a></h3></li>
 {% endfor %}
-</ul>>
+</ul>
 {% endblock %}

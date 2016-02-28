@@ -29,6 +29,7 @@
         <nav>
           <ul class="nav nav-pills pull-right">
             <li role="presentation"><a href="{% url 'index' %}">Home</a></li>
+            <li role="presentation"><a href="{% url 'blogs' %}">Blog</a></li>
             <li role="presentation"><a href="{% url 'about' %}">About me</a></li>
           </ul>
         </nav>
@@ -41,4 +42,7 @@
  <div>
 {% block body %}{% endblock %}
  </div>
+          <footer class="footer">
+        <p>©wanzifa 2016</p>
+      </footer>
  </div>

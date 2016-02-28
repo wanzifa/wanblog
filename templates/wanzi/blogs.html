@@ -2,9 +2,11 @@
 {% load staticfiles %}
 {% block title %}-博客列表{% endblock %}
 {% block body %}
-<ul>
+<br>
 {% for post in posts %}
-<li><h3><a href="{% url 'post' post.title %}">{{ post.title }}</a></h3></li>
+<li><h3><a href="{% url 'post' post.title %}">{{ post.title }}</a></h3></li></br>
+
 {% endfor %}
 </ul>
+</br>
 {% endblock %}

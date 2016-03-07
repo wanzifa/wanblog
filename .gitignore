@@ -1,2 +1,3 @@
 wanblog/settings.py
 **/*.pyc
+**/*.xml

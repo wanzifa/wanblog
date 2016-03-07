@@ -34,15 +34,22 @@
           </ul>
         </nav>
         <h3 class="text-muted">小丸子的blog</h3>
+    <form class="span8 form-search" id="search_form" method="post">
+        {% csrf_token %}
+        <input type="text" class="input-long search-query"  name="query" value="" id="query" />
+        <button type="submit" class="btn btn-success" name="submit" value="Search">Search</button>
+    </form>
       </div>
 
       <div class="jumbotron">
         <h1>Wanzifa' Blog</h1>
         <p class="lead">我叫丸子发,来自木犀团队.是一名正在成长中的后台开发.😄</p>
+
         <p><a class="btn btn-lg btn-success" href="{% url 'blogs' %}" role="button">View all blogs</a></p>
       </div>
 
         <div class="row marketing">
+
         <div class="col-lg-6">
             {% for tag in tag1 %}
             <p><a class="btn btn-primary btn-lg" href="{% url 'tag' tag.name %}" role="button">{{ tag.name }}</a></p>

@@ -1,3 +1,4 @@
 wanblog/settings.py
 **/*.pyc
 **/*.xml
+.idea

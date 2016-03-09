@@ -13,6 +13,11 @@ def index(request):
     tag2 = Tag.objects.all()[count1:]
     context_dict['tag1'] = tag1
     context_dict['tag2'] = tag2
+    if request.method == 'POST':
+        query = request.POST['query']
+        posts = [post for post in Post.objects.all() if query.lower() in post.title.lower()]
+        context_dict['posts'] = posts
+        return render(request, 'wanzi/search.html', context_dict)
     return render(request, 'wanzi/index.html', context_dict)
 
 
@@ -43,3 +48,6 @@ def tag(request, tag_name):
     context_dict['tag'] = tag
     context_dict['posts'] = posts
     return render(request, 'wanzi/tag.html', context_dict)
+
+
+

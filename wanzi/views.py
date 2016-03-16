@@ -63,7 +63,7 @@ def tag(request, tag_name):
     context_dict = {}
     tag = Tag.objects.get(name=tag_name)
     if request.method == 'GET':
-        posts = Post.objects.filter(tag=tag)
+        posts = Post.objects.filter(tag=tag).order_by('-date')
     context_dict['tag'] = tag
     context_dict['posts'] = posts
     return render(request, 'wanzi/tag.html', context_dict)

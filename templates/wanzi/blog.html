@@ -2,7 +2,8 @@
 {% block title %}-{{ post.title }}{% endblock %}
 {% block body %}
 <h2>{{ post.title }}</h2>
-<h4>发布于:{{ post.date }}</h4></br>
+<h4>发布于:{{ post.date }}&nbsp&nbsp&nbsp&nbsp&nbsptag:<a class="btn btn-default btn-sm" href="{% url 'tag' post.tag.name %}" role="button">{{ post.tag.name }}</a></h4>
+  </br>
 <h4>{{ post.body | safe }}</h4></br></br>
 <h4><a href="{% url 'blogs' %}">Back to view other blogs</a></h4>
 {% endblock %}
